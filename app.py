@@ -10,6 +10,10 @@ import re
 from security_config import configure_security
 limiter, csrf = configure_security(app)
 
+# Eximir rutas de registro de CSRF (ya están protegidas por rate limiting)
+csrf.exempt('register_estudiante')
+csrf.exempt('register_profesor')
+
 # Rutas de páginas (Front)
 @app.route('/')
 def root_page():
