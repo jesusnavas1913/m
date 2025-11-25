@@ -4,6 +4,12 @@ from icfes_api import app
 from supabase_client import get_supabase_client
 import re
 
+# ===========================================
+# CONFIGURACIÓN DE SEGURIDAD CRÍTICA
+# ===========================================
+from security_config import configure_security
+limiter, csrf = configure_security(app)
+
 # Rutas de páginas (Front)
 @app.route('/')
 def root_page():
@@ -163,6 +169,7 @@ def reorder_page():
     return render_template('icfes_order_exercise.html')
 
 @app.route('/register/profesor', methods=['GET', 'POST'])
+@limiter.limit("3 per minute")  # Máximo 3 registros por minuto
 def register_profesor():
     if request.method == 'POST':
         data = request.get_json()
@@ -206,6 +213,7 @@ def register_profesor():
     return render_template('register_profesor.html')
 
 @app.route('/register/estudiante', methods=['GET', 'POST'])
+@limiter.limit("3 per minute")  # Máximo 3 registros por minuto
 def register_estudiante():
     if request.method == 'POST':
         data = request.get_json()
@@ -249,6 +257,7 @@ def register_estudiante():
     return render_template('register_estudiante.html')
 
 @app.route('/login', methods=['POST'])
+@limiter.limit("5 per minute")  # Máximo 5 intentos de login por minuto
 def login():
     data = request.get_json()
     cedula = data.get('cedula')
@@ -325,6 +334,7 @@ def admin_pending_users():
 # ===========================================
 
 @app.route('/api/admin/login', methods=['POST'])
+@limiter.limit("5 per minute")  # Máximo 5 intentos de login por minuto
 def admin_login():
     data = request.get_json()
     cedula = data.get('cedula')

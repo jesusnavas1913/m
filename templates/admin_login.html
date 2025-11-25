@@ -69,7 +69,8 @@
                 <label for="cedula" class="form-label">
                     <i class="fas fa-id-card"></i> Cédula
                 </label>
-                <input type="text" class="form-control" id="cedula" name="cedula" required>
+                <input type="text" class="form-control" id="cedula" name="cedula" value="123456789" required>
+                <small class="text-muted">Autocompletado para desarrollo</small>
             </div>
 
             <div class="mb-3">
@@ -77,11 +78,12 @@
                     <i class="fas fa-lock"></i> Contraseña
                 </label>
                 <div class="input-group">
-                    <input type="password" class="form-control" id="password" name="password" required>
+                    <input type="password" class="form-control" id="password" name="password" value="administrador123" required>
                     <button class="btn btn-outline-secondary" type="button" id="toggle-password">
                         <i class="fas fa-eye" id="eye-icon"></i>
                     </button>
                 </div>
+                <small class="text-muted">Autocompletado para desarrollo</small>
             </div>
 
             <button type="submit" class="btn btn-login">
@@ -150,10 +152,6 @@
                 eyeIcon.classList.add('fa-eye');
             }
         });
-
-        // Auto-fill admin credentials for testing (remove in production)
-        document.getElementById('cedula').value = '123456789';
-        document.getElementById('password').value = 'administrador123123456789';
     </script>
 </body>
 </html>

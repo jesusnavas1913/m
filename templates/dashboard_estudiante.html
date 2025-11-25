@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICFES IA - Dashboard Estudiante</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -25,7 +27,7 @@
             position: fixed;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
@@ -135,6 +137,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -401,16 +404,21 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-100vh) translateX(100px);
                 opacity: 0;
@@ -471,6 +479,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="floating-particles" id="particles"></div>
 
@@ -522,7 +531,8 @@
                     <span class="tool-badge">Principal</span>
                     <span class="tool-icon">❓</span>
                     <div class="tool-title">Generador de Preguntas</div>
-                    <div class="tool-description">Crea preguntas personalizadas de ICFES con IA según tus necesidades de estudio</div>
+                    <div class="tool-description">Crea preguntas personalizadas de ICFES con IA según tus necesidades de
+                        estudio</div>
                     <button class="tool-btn">Generar Preguntas</button>
                 </div>
 
@@ -530,7 +540,8 @@
                     <span class="tool-badge">Simulacro</span>
                     <span class="tool-icon">🎯</span>
                     <div class="tool-title">Simulador ICFES</div>
-                    <div class="tool-description">Practica con exámenes reales en un ambiente simulado con cronómetro y resultados instantáneos</div>
+                    <div class="tool-description">Practica con exámenes reales en un ambiente simulado con cronómetro y
+                        resultados instantáneos</div>
                     <button class="tool-btn">Iniciar Simulacro</button>
                 </div>
 
@@ -538,21 +549,24 @@
                     <span class="tool-badge">Interactivo</span>
                     <span class="tool-icon">🔄</span>
                     <div class="tool-title">Ejercicios de Reordenamiento</div>
-                    <div class="tool-description">Ordena elementos arrastrándolos y recibe retroalimentación detallada con IA sobre tu respuesta</div>
+                    <div class="tool-description">Ordena elementos arrastrándolos y recibe retroalimentación detallada
+                        con IA sobre tu respuesta</div>
                     <button class="tool-btn">Practicar Ordenamiento</button>
                 </div>
 
                 <div class="tool-card" onclick="openTool('/progress')">
                     <span class="tool-icon">📈</span>
                     <div class="tool-title">Mi Progreso</div>
-                    <div class="tool-description">Visualiza tu progreso con gráficos interactivos e identifica patrones de aprendizaje</div>
+                    <div class="tool-description">Visualiza tu progreso con gráficos interactivos e identifica patrones
+                        de aprendizaje</div>
                     <button class="tool-btn">Ver Estadísticas</button>
                 </div>
 
                 <div class="tool-card" onclick="openTool('/chat')">
                     <span class="tool-icon">🧠</span>
                     <div class="tool-title">Asistente IA</div>
-                    <div class="tool-description">Tu tutor personal con inteligencia artificial para resolver dudas en tiempo real</div>
+                    <div class="tool-description">Tu tutor personal con inteligencia artificial para resolver dudas en
+                        tiempo real</div>
                     <button class="tool-btn">Chatear Ahora</button>
                 </div>
             </div>
@@ -587,7 +601,7 @@
         }
 
         // Logout functionality
-        document.getElementById('logoutBtn').addEventListener('click', function() {
+        document.getElementById('logoutBtn').addEventListener('click', function () {
             if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
                 fetch('/logout', { method: 'GET' }).then(() => {
                     window.location.href = '/login';
@@ -596,8 +610,8 @@
         });
 
         // Load user data and stats
-        document.addEventListener('DOMContentLoaded', function() {
-            const userName = 'Estudiante';
+        document.addEventListener('DOMContentLoaded', function () {
+            const userName = '{{ user_name }}' || 'Estudiante';
             document.getElementById('userName').textContent = userName;
             document.getElementById('userAvatar').textContent = userName.charAt(0).toUpperCase();
 
@@ -649,4 +663,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña Admin - Acceso Rápido</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .credentials {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .credentials strong {
+            color: #667eea;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon">🔐</div>
+        <h1>Sistema de Cambio de Contraseña</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">
+            Administrador - ICFES.IA
+        </p>
+
+        <div class="credentials">
+            <h3 style="margin-top: 0; color: #667eea;">📋 Credenciales Actuales</h3>
+            <p><strong>Cédula:</strong> 123456789</p>
+            <p><strong>Contraseña Actual:</strong> administrador123</p>
+            <p style="margin: 0;"><small>⚠️ Usa estas credenciales para verificar tu identidad</small></p>
+        </div>
+
+        <div class="feature">
+            <h3>✨ Características del Sistema</h3>
+            <ul>
+                <li>🛡️ Verificación de identidad completa</li>
+                <li>📊 Indicador de fuerza de contraseña en tiempo real</li>
+                <li>✅ Validación de requisitos mientras escribes</li>
+                <li>🔒 Encriptación con bcrypt automática</li>
+                <li>👁️ Mostrar/ocultar contraseñas</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3>🔐 Requisitos de la Nueva Contraseña</h3>
+            <ul>
+                <li>Mínimo 8 caracteres</li>
+                <li>Al menos 1 letra mayúscula (A-Z)</li>
+                <li>Al menos 1 letra minúscula (a-z)</li>
+                <li>Al menos 1 número (0-9)</li>
+                <li>Diferente a la contraseña actual</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3>💡 Ejemplo de Contraseña Válida</h3>
+            <p style="margin: 10px 0;">
+                <code style="background: #fff; padding: 5px 10px; border-radius: 4px; font-size: 16px;">
+                    Admin2024
+                </code>
+            </p>
+            <small>✅ 9 caracteres, tiene mayúscula, minúscula y número</small>
+        </div>
+
+        <a href="http://127.0.0.1:5000/admin/change-password" class="btn" target="_blank">
+            🚀 Ir a Cambiar Contraseña
+        </a>
+
+        <a href="http://127.0.0.1:5000/admin/login" class="btn"
+            style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+            🔑 Ir al Login de Admin
+        </a>
+
+        <div
+            style="text-align: center; margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 8px; border: 1px solid #ffc107;">
+            <p style="margin: 0; color: #856404;">
+                <strong>📝 Nota:</strong> Después de cambiar tu contraseña, úsala para iniciar sesión la próxima vez.
+                Tu contraseña quedará protegida con encriptación bcrypt.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px; color: #666; font-size: 14px;">
+            <p>🔧 Servidor: <strong>http://127.0.0.1:5000</strong></p>
+            <p>📅 Sistema actualizado: 2025-11-23</p>
+        </div>
+    </div>
+</body>
+
+</html>

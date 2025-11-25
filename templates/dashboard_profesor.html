@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICFES Pro - Dashboard Profesor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -135,6 +137,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -401,16 +404,21 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-100vh) translateX(100px);
                 opacity: 0;
@@ -471,6 +479,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="floating-particles" id="particles"></div>
 
@@ -522,7 +531,8 @@
                     <span class="tool-badge">Tutor IA</span>
                     <span class="tool-icon">🧠</span>
                     <div class="tool-title">Tutor de IA</div>
-                    <div class="tool-description">Tu asistente inteligente para resolver dudas y explicar conceptos complejos en tiempo real</div>
+                    <div class="tool-description">Tu asistente inteligente para resolver dudas y explicar conceptos
+                        complejos en tiempo real</div>
                     <button class="tool-btn">Chatear con Tutor</button>
                 </div>
 
@@ -530,7 +540,8 @@
                     <span class="tool-badge">Recursos</span>
                     <span class="tool-icon">📚</span>
                     <div class="tool-title">Biblioteca Digital</div>
-                    <div class="tool-description">Accede a miles de recursos, resúmenes y material de estudio organizado por temas</div>
+                    <div class="tool-description">Accede a miles de recursos, resúmenes y material de estudio organizado
+                        por temas</div>
                     <button class="tool-btn">Explorar Biblioteca</button>
                 </div>
 
@@ -538,7 +549,8 @@
                     <span class="tool-badge">Evaluación IA</span>
                     <span class="tool-icon">📄</span>
                     <div class="tool-title">Evaluador de PDF</div>
-                    <div class="tool-description">Analiza evaluaciones en PDF con inteligencia artificial para obtener retroalimentación detallada y estadísticas</div>
+                    <div class="tool-description">Analiza evaluaciones en PDF con inteligencia artificial para obtener
+                        retroalimentación detallada y estadísticas</div>
                     <button class="tool-btn">Evaluar Documentos</button>
                 </div>
             </div>
@@ -553,28 +565,32 @@
                 <div class="tool-card" onclick="openTool('#')">
                     <span class="tool-icon">👥</span>
                     <div class="tool-title">Gestión de Clase</div>
-                    <div class="tool-description">Administra tus estudiantes, asigna tareas y monitorea el progreso grupal</div>
+                    <div class="tool-description">Administra tus estudiantes, asigna tareas y monitorea el progreso
+                        grupal</div>
                     <button class="tool-btn">Ver Panel</button>
                 </div>
 
                 <div class="tool-card" onclick="openTool('#')">
                     <span class="tool-icon">📋</span>
                     <div class="tool-title">Creador de Evaluaciones</div>
-                    <div class="tool-description">Diseña evaluaciones completas con banco de preguntas y calificación automática</div>
+                    <div class="tool-description">Diseña evaluaciones completas con banco de preguntas y calificación
+                        automática</div>
                     <button class="tool-btn">Crear Evaluación</button>
                 </div>
 
                 <div class="tool-card" onclick="openTool('#')">
                     <span class="tool-icon">📊</span>
                     <div class="tool-title">Reportes de Rendimiento</div>
-                    <div class="tool-description">Genera reportes detallados individuales y grupales con insights accionables</div>
+                    <div class="tool-description">Genera reportes detallados individuales y grupales con insights
+                        accionables</div>
                     <button class="tool-btn">Ver Reportes</button>
                 </div>
 
                 <div class="tool-card" onclick="openTool('#')">
                     <span class="tool-icon">⚙️</span>
                     <div class="tool-title">Configuración Avanzada</div>
-                    <div class="tool-description">Personaliza parámetros de IA, configuraciones de evaluación y preferencias del sistema</div>
+                    <div class="tool-description">Personaliza parámetros de IA, configuraciones de evaluación y
+                        preferencias del sistema</div>
                     <button class="tool-btn">Configurar</button>
                 </div>
             </div>
@@ -607,7 +623,7 @@
         }
 
         // Logout functionality
-        document.getElementById('logoutBtn').addEventListener('click', function() {
+        document.getElementById('logoutBtn').addEventListener('click', function () {
             if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
                 fetch('/logout', { method: 'GET' }).then(() => {
                     window.location.href = '/login';
@@ -616,8 +632,8 @@
         });
 
         // Load user data and stats
-        document.addEventListener('DOMContentLoaded', function() {
-            const userName = 'Profesor';
+        document.addEventListener('DOMContentLoaded', function () {
+            const userName = '{{ user_name }}' || 'Profesor';
             document.getElementById('userName').textContent = userName;
             document.getElementById('userAvatar').textContent = userName.charAt(0).toUpperCase();
 
@@ -669,4 +685,5 @@
         });
     </script>
 </body>
+
 </html>
